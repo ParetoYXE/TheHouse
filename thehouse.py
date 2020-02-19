@@ -18,7 +18,7 @@ npcs = []
 
 gameOn = False
 def startGame():
-    global food,water,wood,scrapMetal,spareParts,ammo,flamerFuel,fuel
+    global food,water,wood,scrapMetal,spareParts,ammo,flamerFuel,fuel,gameOn
     print("#########################################\n")
     print("##############THE.HOUSE##################\n")
     print("#########################################\n")
@@ -43,7 +43,7 @@ def startGame():
     print("#            turn. It didn't matter now. All that did was you survived,          #\n")
     print("#            forced to wonder this blighted land.                                #\n")
     print("##################################################################################")
-
+    input("")
     food = 3
     water = 2
     wood = 0
@@ -53,7 +53,7 @@ def startGame():
     flamerFuel = 0
     fuel = 0
 
-    gamneOn = True
+    gameOn = True
     gameLoop()
 
 
@@ -63,6 +63,10 @@ def gameLoop():
 
     while (gameOn):
         print("game on")
+
+
+
+##def drawEnviroment():
 
 
 
