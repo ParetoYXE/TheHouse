@@ -4,6 +4,9 @@
 #####################################
 import os
 clear = lambda: os.system("cls")
+
+
+#character related stats
 playerName = ''
 food = 0
 water = 0
@@ -14,7 +17,15 @@ ammo = 0
 flamerFuel = 0
 fuel = 0
 
+
+#NPC
 npcs = []
+
+#Locations
+world = ["SaltedEarth","Yard"]
+
+
+
 
 gameOn = False
 def startGame():
@@ -62,11 +73,27 @@ def gameLoop():
     global gameOn
 
     while (gameOn):
-        print("game on")
+        drawEnviroment(world[0])
+        input()
 
 
 
-##def drawEnviroment():
+def drawEnviroment(location):
+    clear()
+    if(location == "SaltedEarth"):
+        print("#################################################################")
+        print("#                                                               #")
+        print("#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#")
+        print("#       ~                                   /\                  #")
+        print("#     ~  ~                                 /  \                 #")
+        print("#                                          |  |                 #")
+        print("#                                                               #")
+        print("#                            .                                  #")
+        print("#                                                               #")
+        print("#                                                               #")
+        print("#                                                               #")
+        print("#        *              *              *                        #")
+        print("#################################################################")
 
 
 
