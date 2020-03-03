@@ -22,7 +22,8 @@ fuel = 0
 npcs = []
 
 #Locations
-world = ["SaltedEarth","Yard"]
+world = ["SaltedEarth","House"]
+currentLocation = 0
 
 
 
@@ -30,9 +31,7 @@ world = ["SaltedEarth","Yard"]
 gameOn = False
 def startGame():
     global food,water,wood,scrapMetal,spareParts,ammo,flamerFuel,fuel,gameOn
-    print("#########################################\n")
-    print("##############THE.HOUSE##################\n")
-    print("#########################################\n")
+    printTitle()
     playerName = input("Please Enter your name: ")
     clear()
     print("##################################################################################\n")
@@ -71,21 +70,21 @@ def startGame():
 
 def gameLoop():
     global gameOn
-
+    drawEnviroment(world[0])
     while (gameOn):
-        drawEnviroment(world[0])
-        input()
+        getUserCommand()
 
 
 
 def drawEnviroment(location):
     clear()
+    printTitle()
     if(location == "SaltedEarth"):
         print("#################################################################")
         print("#                                                               #")
         print("#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#")
-        print("#       ~                                   /\                  #")
-        print("#     ~  ~                                 /  \                 #")
+        print("#                                           /\                  #")
+        print("#     ~ ~~                                 /  \                 #")
         print("#                                          |  |                 #")
         print("#                                                               #")
         print("#                            .                                  #")
@@ -94,8 +93,31 @@ def drawEnviroment(location):
         print("#                                                               #")
         print("#        *              *              *                        #")
         print("#################################################################")
+    if(location == "House"):
+        print("#################################################################")
+        print("#    /       \                                                  #")
+        print("#   /         \                                                 #")
+        print("#  /           \                                                #")
+        print("# /             \                                               #")
+        print("# |             |                ~~~~~                          #")
+        print("# |             |            ~~          ~~~~~~~                #")
+        print("# |     |  |    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#")
+        print("# |     |* |    |                                               #")
+        print("#                                                               #")
+        print("#                                                               #")
+        print("#                                                               #")
+        print("#################################################################")
 
 
 
+def getUserCommand():
+    command = input("Enter Command >")
+    if(command.upper() == "NORTH"):
+        if(location == 0):
+            drawEnviroment(world[1])
 
+def printTitle():
+        print("#################################################################\n")
+        print("###########################THE.HOUSE#############################\n")
+        print("#################################################################\n")
 startGame()
